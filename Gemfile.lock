@@ -1,28 +1,38 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    declarative (0.0.9)
+    declarative-option (0.1.0)
     httparty (0.15.6)
       multi_xml (>= 0.5.2)
+    multi_json (1.12.1)
     multi_xml (0.6.0)
     mustermann (1.0.0)
     puma (3.9.1)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
+    representable (3.0.4)
+      declarative (< 0.1.0)
+      declarative-option (< 0.2.0)
+      uber (< 0.2.0)
     sinatra (2.0.0)
       mustermann (~> 1.0)
       rack (~> 2.0)
       rack-protection (= 2.0.0)
       tilt (~> 2.0)
     tilt (2.0.8)
+    uber (0.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   httparty
+  multi_json
   puma
+  representable
   sinatra
 
 BUNDLED WITH
-   1.14.6
+   1.15.3
