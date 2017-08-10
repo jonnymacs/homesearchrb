@@ -7,16 +7,28 @@ class HomeSearch < Sinatra::Base
     erb :index
   end
 
-  get '/search.json' do
-    content_type :json
+  get '/search' do
 
-    # run the search
-    result = Zillow.get_search_results(params[:address], params[:citystatezip])
+    parsed_params = params["query"].split(",")
+    address = parsed_params[0].strip
+    citystatezip = parsed_params[1..-1].join(",").strip
 
-    # parse the zillow response to an open structure
-    home = ZillowResultRepresenter.new(OpenStruct.new).from_hash(result)
+    # query the zillow api for the parsed address / citystatezip
+    status, result = Zillow.get_search_results(address, citystatezip)
 
-    #render the struct to the client
-    HomeRepresenter.new(home).to_json
+    case status
+    when 200
+      # parse the zillow response to an open structure
+      @home = ZillowResultRepresenter.new(OpenStruct.new).from_hash(result)
+      # render the result
+      erb :_home, layout: false
+    when 508
+      erb :_no_result, layout: false
+    else
+      @message = result
+      erb :_error, layout: false
+    end
+
   end
+
 end

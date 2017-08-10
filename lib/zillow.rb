@@ -4,8 +4,16 @@ class Zillow
   format :xml
 
   def self.handle_response(response)
-    return response.parsed_response["searchresults"]["response"]["results"]["result"] if response.code == 200
-    # todo raise exception for
+    # api returns 200 even on failure...
+    if response.code == 200
+      # check the real response code...
+      code = response.parsed_response["searchresults"]["message"]["code"].to_i
+      return 200, response.parsed_response["searchresults"]["response"]["results"]["result"] if code == 0
+      return code, nil if code == 508
+      return code, response.parsed_response["searchresults"]["message"]["text"]
+    end
+
+    return 500, "The server did not respond"
   end
 
   def self.get_search_results(address, citystatezip)

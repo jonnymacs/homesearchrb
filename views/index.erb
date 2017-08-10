@@ -1,6 +1,7 @@
 <div>Search for a home</div>
 <div>
-  <form id="home_search">
-    <input type="text">
+  <form id="home_search" onSubmit="return false">
+    <input id="search_query" type="text" name="query"><input id="perform_search" type="submit">
   </form>
 </div>
+<div id="display_result"></div>
