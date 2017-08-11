@@ -1,3 +1,11 @@
+# the Zillow::ResultRepresenter parses
+# a zillow search results onto a model object
+# that supports the defined properties (or an open struct)
+#
+# zestimates are parsed to money objects for easy
+# manipulation in the app / ui
+# https://github.com/RubyMoney/money
+#
 class Zillow::ResultRepresenter < Representable::Decorator
   include Representable::JSON
 

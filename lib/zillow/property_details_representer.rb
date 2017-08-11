@@ -1,3 +1,7 @@
+# The Zillow::PropertyDetailsRepresenter parses
+# a zillow prop details response onto a model object
+# that supports the defined properties (or an open struct)
+#
 class Zillow::PropertyDetailsRepresenter < Representable::Decorator
   include Representable::JSON
 
