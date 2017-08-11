@@ -1,4 +1,4 @@
-<% if @home.has_details %>
+<% if @home.has_details && @home["images"] %>
   <div>
     <img src=<%= @home["images"].first %> />
   </div>
