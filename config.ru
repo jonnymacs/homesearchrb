@@ -1,6 +1,5 @@
 #\ -s puma
 $: << "lib"
-$: << "models"
 
 require 'rubygems'
 require 'rack'

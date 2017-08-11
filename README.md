@@ -9,6 +9,8 @@ You can demo this application on [aws](http://54.91.158.68/)
 The app is implemented with sinatra, a simple ruby framework for
 building web applications.
 
+Nginx is used to serve static files, puma is used to serve the application.
+
 Bootstrap is included but not really used.
 
 jQuery is used for making an ajax request to the backend.
