@@ -1,5 +1,5 @@
 body {
-  width: 420px;
+  width: 400px;
 }
 
 .greeting {
@@ -12,7 +12,6 @@ body {
   text-align: center;
 }
 .search_box input {
-  margin: 5px;
   font-size: 16px;
 }
 
@@ -27,7 +26,7 @@ body {
 }
 
 #display_result div img {
-  margin: 5px;
+  margin: 5px 0px;
 }
 
 #display_result .core_data {
