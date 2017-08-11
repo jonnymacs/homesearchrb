@@ -1,0 +1,36 @@
+.search_box span {
+  margin: 5px;
+  font-size: 15px;
+}
+
+.search_box input {
+  margin: 5px;
+}
+
+.search_box #query {
+  width: 200px;
+}
+
+#display_result {
+  margin: 5px;
+  margin-bottom: 10px;
+  width: 400px;
+  text-align: justify;
+}
+
+#display_result div img {
+  margin: 5px;
+}
+
+#display_result .core_data {
+  margin: 10px 5px 10px 5px;
+}
+
+#display_result .financials {
+  margin: 10px 5px 10px 5px;
+}
+
+#display_result .description {
+  margin: 10px 5px 10px 5px;
+  width: 100%;
+}

@@ -10,6 +10,7 @@ require 'httparty'
 require 'multi_json'
 require 'representable'
 require 'representable/json'
+require 'money'
 
 lib_files = Dir.glob('./lib/**/*.rb').sort
 lib_files.each do |requirement|
@@ -17,5 +18,7 @@ lib_files.each do |requirement|
 end
 
 require './home_search'
+
+I18n.enforce_available_locales = false
 
 run HomeSearch

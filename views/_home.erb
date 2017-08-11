@@ -1,6 +1,30 @@
-<div>
-  <img src=<%= @home["images"].first %> />
+<% if @home.has_details %>
+  <div>
+    <img src=<%= @home["images"].first %> />
+  </div>
+<% end %>
+
+<div class="core_data">
+  <div class="address">
+    <%= @home.address["street"] %>, <%= @home.address["city"] %>, <%= @home.address["state"] %>
+  </div>
+  <div class="structure">
+    <%= @home.bedrooms %> Bedrooms, <%= @home.bathrooms %> Bathrooms, <%= @home.square_feet %> sqft
+  </div>
 </div>
-<div>
-  <%= @home.address["street"] %>, <%= @home.address["city"] %>, <%= @home.address["state"] %>
+
+<div class="financials">
+  <div class="estimate">
+    <b>Estimate:</b> <%= @home.estimate["amount"].format(no_cents: true) %>
+  </div>
+  <div class="change">
+    <b>Change:</b> <%= @home.estimate["value_change"]["amount"].format(no_cents: true) %> in last <%= @home.estimate["value_change"]["in_last"] %> days
+  </div>
+  <div class="range">
+    <b>Range:</b> <%= @home.estimate["range"]["low_amount"].format(no_cents: true) %> - <%= @home.estimate["range"]["high_amount"].format(no_cents: true) %>
+  </div>
 </div>
+
+<% if @home.has_details %>
+  <div class="description"><%= @home.description %></div>
+<% end %>

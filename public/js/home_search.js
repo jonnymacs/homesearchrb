@@ -1,9 +1,9 @@
 $(function () {
   $('#perform_search').click(function(e) {
     e.preventDefault();
-    console.log("here");
-    var params = { query: $('#search_query').val() };
-    console.log(params);
+
+    var params = { query: $('#query').val() };
+
     return $.get('/search', params)
       .success(function(data) {
         $('#display_result').html(data);

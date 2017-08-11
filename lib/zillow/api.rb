@@ -36,7 +36,7 @@ module Zillow
       return "/webservice/#{endpoint}.htm"
     end
 
-    def self.get_search_results(address, citystatezip)
+    def self.get_deep_search_results(address, citystatezip)
       path = get_path(__method__)
 
       params = { address: address, citystatezip: citystatezip }
