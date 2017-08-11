@@ -23,6 +23,9 @@
   <div class="range">
     <b>Range:</b> <%= @home.estimate["range"]["low_amount"].format(no_cents: true) %> - <%= @home.estimate["range"]["high_amount"].format(no_cents: true) %>
   </div>
+  <div class="local_info">
+    <b>Average Home Price</b> in <%= @home.local_info["name"] %> is $<%= @home.local_info["average_amount"] %>
+  </div>
 </div>
 
 <% if @home.has_details %>

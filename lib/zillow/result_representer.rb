@@ -20,7 +20,12 @@ class Zillow::ResultRepresenter < Representable::Decorator
     return hsh
   }
 
-  property :local_info, as: :localRealEstate
+  property :local_info, as: :localRealEstate, parse_filter: -> (local_info, options) {
+    hsh = {}
+    hsh["name"] = local_info["region"]["name"]
+    hsh["average_amount"] = local_info["region"]["zindexValue"]
+    return hsh
+  }
 
   property :use_code, as: :useCode
   property :bedrooms
