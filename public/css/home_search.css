@@ -1,8 +1,14 @@
-.search_box span {
+.greeting {
+  width: 400px;
   margin: 5px;
-  font-size: 15px;
+  font-size: 25px;
+  text-align: center;
 }
 
+.search_box {
+  width: 400px;
+  text-align: center;
+}
 .search_box input {
   margin: 5px;
 }
