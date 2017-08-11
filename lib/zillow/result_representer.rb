@@ -1,4 +1,4 @@
-class ZillowResultRepresenter < Representable::Decorator
+class Zillow::ResultRepresenter < Representable::Decorator
   include Representable::JSON
 
   property :provider, reader: -> (**) { "zillow" }
@@ -6,5 +6,6 @@ class ZillowResultRepresenter < Representable::Decorator
   property :links
   property :address
   property :estimate, as: :zestimate
+  property :local_info, as: :localRealEstate
 
 end
